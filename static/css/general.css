@@ -1,0 +1,193 @@
+/* General CSS used anywhere */
+
+/* Setting General CSS Properties */
+:root {
+	--CWhite:  #FBFBFF;
+	--CRed:  #B70113;
+	--CBlue:  #657ED4;
+	--CDarkBlue:  #28408F;
+	--CBlack:  #0D0106;
+}
+
+* {
+	color: var(--CBlack);
+}
+
+p {
+	font-size: 1.25em;
+	padding: 0em;
+	margin: 0em;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+hr {
+	border: none;
+	padding: 0px;
+	margin: 0px;
+	height: 2em;
+	color: var(--CDarkBlue); /* old IE */
+	background-color: var(--CDarkBlue); /* Modern Browsers */
+	opacity: 1;
+}
+
+.container-fluid{
+	padding: 0;
+}
+
+.header {
+	background-color: var(--CWhite);
+}
+
+/* Text CSS Properties */
+.no-text-decor {
+	text-decoration: none;
+	border: 0;
+}
+
+.title0 {
+	font-size: 3em;
+}
+
+.title1 {
+	font-size: 2em;
+}
+
+.title2 {
+	font-size: 1.5em;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.link:link {
+	color: var(--CBlue);
+	font-weight: lighter;
+}
+
+.link:visited {
+	color: var(--CRed);
+
+}
+
+.clean-link {
+	text-decoration: none;
+	color: var(--CWhite);
+	text-shadow: 0px 0px 0px var(--CBlack);
+	transition: 0.2s;
+}
+
+.clean-link:hover {
+	color: var(--CWhite);
+	text-shadow: 0px -5px 10px var(--CDarkBlue);
+}
+
+.error-text {
+	font-weight: bold;
+	color: var(--CRed);
+	text-shadow: 0px 0px 1px rgba(40, 64, 143, 0.8);
+}
+
+.card {
+	border: 0.1em solid var(--CBlue);
+	background-color: var(--CBlue);
+	color: var(--CWhite);
+	box-shadow: 0px 0px 1px rgba(40, 64, 143, 1);
+}
+
+.white-font {
+	color: var(--CWhite);
+}
+
+/* Buttons and Inputs */
+.but1 {
+	color: var(--CBlack);
+	background-color: var(--CWhite);
+	
+	border: 0.1em solid var(--CBlue);
+	border-radius: 0.2em;
+
+	position: relative;
+	display: block;
+
+	padding: 0.5em 1em 0.5	em 1em;
+	margin-top: 0.25em;
+	
+	transition: 0.1s;
+	-webkit-transition: 0.1s;
+}
+
+.but1:hover {
+	color: var(--CWhite);
+	background-color: var(--CBlue);
+}
+
+.butred {
+	color: var(--CBlack);
+	background-color: var(--CWhite);
+	
+	border: 0.1em solid var(--CRed);
+	border-radius: 0.2em;
+
+	position: relative;
+	display: block;
+
+	padding: 0.5em 1em 0.5	em 1em;
+	margin-top: 0.25em;
+	
+	transition: 0.1s;
+	-webkit-transition: 0.1s;
+}
+
+.butred:hover {
+	color: var(--CWhite);
+	background-color: var(--CRed);
+}
+
+.inp1 {
+	text-decoration: none;
+	border: none;
+	background-color: var(--CWhite);
+
+	border-bottom: 0.1em solid var(--CBlue);
+
+	position: relative;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+}
+
+/* MISC: Margins & Alignments */
+
+.margtop1 {
+	margin-top: 1em;
+}
+
+.margbot0 {
+	margin-bottom: 0em;
+}
+
+.margbot1 {
+	margin-bottom: 1em;
+}
+
+.margright1 {
+	margin-right: 1em;
+}
+
+.everything-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

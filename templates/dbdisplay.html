@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>BLEE</title>
+
+	<!-- Bootstrap & Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+</head>
+<body>
+	<div class="container-fluid">
+		<!-- Header Start -->
+		<div class="header">
+			<div class="row">
+				<div class="col-sm-1">
+					
+				</div>
+				<div class="col-sm-1 title1 align-center">
+					<a href="{{ url_for('login') }}" class="no-text-decor but1">Log In</a>
+				</div>
+				<div class="title0 col-sm-8 align-center">
+					BLEE
+				</div>
+				<div class="col-sm-1 title1 align-center">
+					<a href="{{ url_for('signup') }}" class="no-text-decor but1">Sign Up</a>
+				</div>
+				<div class="col-sm-1">
+					
+				</div>
+				<hr>
+			</div>
+		</div>
+		<!-- Header End -->
+		
+		<!-- Body Start -->
+		<div class="container-fluid bg">
+			<div class="container bgw">
+				<p>
+					Currently logged user: {{ curr_user }}
+					<br>
+					<br>
+					<br>
+					All users: {{ users }}
+					<br>
+					<br>
+					<br>
+					Posts: {{ posts }}
+				</p>
+			</div>
+		</div>
+		<!-- Body End -->
+	</div>
+	<!-- Custom & Bootstrap JS -->
+	<script src="{{ url_for('static', filename='js/landing.css') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

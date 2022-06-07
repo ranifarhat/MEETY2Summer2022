@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>BLEE</title>
+
+	<!-- Bootstrap & Custom CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+</head>
+<body>
+	<div class="container-fluid">
+		<!-- Header Start -->
+		<div class="header">
+			<div class="row">
+
+				<!-- If a user is logged in -->
+				{% if user_active == True %}
+					<div class="col-sm-2 title0 align-center">
+						{{ user }}
+					</div>
+					<div class="col-sm-1 title1 align-center">
+
+					</div>
+					<div class="col-sm-6 title0 align-center">
+						BLEE
+					</div>
+					<div class="col-sm-1 title1 align-center">
+
+					</div>
+					<div class="col-sm-1 title1 align-center">
+						<a href="{{ url_for('signout') }}" class="no-text-decor butred">Sign Out</a>
+					</div>
+					<div class="col-sm-1 title1 align-center">
+
+					</div>
+
+				<!-- If no user is logged in -->
+				{% else %}
+					<div class="col-sm-3 title0 align-center">
+						{{ user }}
+					</div>
+					<div class="col-sm-6 title0 align-center">
+						BLEE
+					</div>
+					<div class="col-sm-1 title1 align-center">
+						
+					</div>
+					<div class="col-sm-1 title1 align-center">
+						<a href="{{ url_for('login') }}" class="no-text-decor but1">Log In</a>
+					</div>
+					<div class="col-sm-1 title1 align-center">
+						<a href="{{ url_for('signup') }}" class="no-text-decor but1">Sign Up</a>
+					</div>
+				{% endif %}
+				<hr>
+			</div>
+		</div>
+		<!-- Header End -->
+		
+		<!-- Body Start -->
+		<div class="container-fluid bg">
+			<div class="container bgw">
+
+				<!-- Description of BLEE -->
+				<div class="row">
+					<div class="col-sm-2 margtop1">
+
+					</div>
+					<div class="col-sm-8 margtop1 align-center title1">
+						Little or a lot, share anything on your mind!<br>Share & Blog Freely
+					</div>
+					<div class="col-sm-2 margtop1">
+						
+					</div>
+				</div>
+
+				<!-- Posting Section -->
+				<form action="/" method="POST" class="align-center">
+					<div class="row">
+						<div class="col-sm-2">
+
+						</div>
+						<div class="col-sm-7 align-center">
+							<textarea name="post" id="textar" placeholder="Share what's on your mind"></textarea>
+						</div>
+						<div class="col-sm-1 align-center">
+							<div id="textar-btn-cont"><input id="textar-btn" type="submit" value=">"></div>
+						</div>
+						<div class="col-sm-2">
+
+						</div>
+					</div>
+
+					<!-- Error Section -->
+					<div class="error-text">
+						&nbsp;
+						{{ lenerror }}
+						{{ accerror }}
+					</div>
+				</form>
+
+				<!-- Displays All Posts -->
+				{% for post in posts %}
+				<div class="container-fluid card margbot1">
+					<div class="row">
+						<div class="col-sm-2 align-center title1 white-font">
+							{{ post["poster"] }}:
+						</div>
+						<div class="col-sm-10 align-center">
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-2">
+							
+						</div>
+						<div class="col-sm-8 title1 white-font">
+							{{ post["content"] }}
+						</div>
+						<div class="col-sm-2">
+							
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<br>
+
+				<!-- Error Section -->
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-sm-12 align-center title1 margbot1">
+							{{ noposterror }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Body End -->
+	<!-- Custom & Bootstrap JS -->
+	<script src="{{ url_for('static', filename='js/landing.css') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>

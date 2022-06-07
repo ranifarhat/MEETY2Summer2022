@@ -1,0 +1,47 @@
+/* Specific CSS for the landing page */
+
+body {
+	background-color: var(--CDarkBlue);
+}
+
+.bg {
+	background-color: var(--CDarkBlue);
+}
+
+.bgw {
+	background-color: var(--CWhite);
+}
+
+#textar {
+	border: none;
+	color: var(--CBlack);
+	
+	border: 0.15em solid var(--CBlue);
+	border-radius: 0.2em;
+
+	margin: 1em;
+	width: 100%;
+	font-size: 1.5em;
+}
+
+#textar-btn-cont {
+	background-color: var(--CBlue);
+	border-radius: 0.2em;
+	position: absolute;
+	margin: 1em;
+	margin-top: 2.5em;
+	width: 4em;
+	aspect-ratio: 1 / 1;
+}
+
+#textar-btn {
+	font-size: 2em;
+	border: none;
+	color: var(--CWhite);
+	font-weight: bolder;
+	background-color: var(--CBlue);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

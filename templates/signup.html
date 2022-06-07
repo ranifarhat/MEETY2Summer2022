@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>BLEE</title>
+
+	<!-- Custom & Bootstrap CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/signing.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+	<!-- Back To Landing Page -->
+	<div class="home title0 align-center">
+		<a class="clean-link" href="{{ url_for('landing') }}">BLEE</a>
+	</div>
+	
+	<!-- Sign In Form -->
+	<div class="cont-sign align-center">
+		<div class="title0 margtop1">Sign Up</div>
+		<div class="everything-center">
+			<form action="/signup" method="POST">
+				<br><input class="inp1 title2 margtop1" type="text" name="name" placeholder="Ryan Reynolds">
+				<br><input class="inp1 title2" type="text" name="uname" placeholder="TheMightyLion123">
+				<br><input class="inp1 title2" type="text" name="email" placeholder="example@bl-ee.com">
+				<br><input class="inp1 title2" type="password" name="pword" placeholder="Password">
+				<br><input class="inp1 title2" type="password" name="confpword" placeholder="Confirm Password">
+				<center><input class="but1 title2 margtop1" type="submit" value="Submit"></center>
+			</form>
+			<br>
+
+			<!-- Error Section -->
+			<div class="error-text">{{ passerror }}{{ error }}</div>
+			Already a member? <a class="link" href="{{ url_for('login') }}">Log in</a>
+		</div>
+	</div>
+	<!-- Bootstrap & Custom JS -->
+
+	<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
